@@ -189,13 +189,13 @@ open class DKKeyFrameAnimation: CAKeyframeAnimation {
         var v = 0.0
         var value = 0.0
 
-        var valueArray: [Double] = []
+        var valueArray: [CGFloat] = []
 
         for _ in 0..<steps {
             v = self.functionBlock(self.duration * progress * 1000, 0, 1, self.duration * 1000);
             value = startValue + v * (endValue - startValue);
 
-            valueArray.append(value)
+            valueArray.append(CGFloat(value))
             progress += increment
         }
 
